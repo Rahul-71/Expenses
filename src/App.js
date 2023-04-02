@@ -11,6 +11,7 @@ export default function App() {
 
 	return (
 		<div className="App">
+			<h1>Expense Details !!</h1>
 			{expenses.map(expense => (
 				<ExpenseItems
 					title={expense.title}
