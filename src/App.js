@@ -2,9 +2,23 @@ import ExpenseItems from "./components/ExpenseItems";
 import "./styles.css";
 
 export default function App() {
-  return (
-    <div className="App">
-      <ExpenseItems/>
-    </div>
-  );
+	const expenses = [
+		{ id: 'e1', location: 'Delhi', title: 'Toilet Paper', amount: 94.12, date: new Date(2020, 7, 14), },
+		{ id: 'e2', location: 'Chandigarh', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) },
+		{ id: 'e3', location: 'Noida', title: 'Car Insurance', amount: 294.67, date: new Date(2021, 2, 28), },
+		{ id: 'e4', location: 'Gao', title: 'New Desk (Wooden)', amount: 450, date: new Date(2021, 5, 12), },
+	];
+
+	return (
+		<div className="App">
+			{expenses.map(expense => (
+				<ExpenseItems
+					title={expense.title}
+					amount={expense.amount}
+					date={expense.date}
+					location={expense.location}
+				/>
+			))}
+		</div>
+	);
 }
