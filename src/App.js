@@ -1,4 +1,4 @@
-import ExpenseItems from "./components/ExpenseItems";
+import Expenses from "./components/Expenses";
 import "./styles.css";
 
 export default function App() {
@@ -12,14 +12,7 @@ export default function App() {
 	return (
 		<div className="App">
 			<h1>Expense Details !!</h1>
-			{expenses.map(expense => (
-				<ExpenseItems
-					title={expense.title}
-					amount={expense.amount}
-					date={expense.date}
-					location={expense.location}
-				/>
-			))}
+			<Expenses expenses={expenses} />
 		</div>
 	);
 }
