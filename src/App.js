@@ -1,7 +1,7 @@
 import Expenses from "./components/Expenses/Expenses";
 import "./index.css";
 
-export default function App() {
+const App = () => {
 	const expenses = [
 		{ id: 'e1', location: 'Delhi', title: 'Toilet Paper', amount: 94.12, date: new Date(2020, 7, 14), },
 		{ id: 'e2', location: 'Chandigarh', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) },
@@ -16,3 +16,5 @@ export default function App() {
 		</div>
 	);
 }
+
+export default App;
