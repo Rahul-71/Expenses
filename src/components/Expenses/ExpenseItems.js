@@ -5,11 +5,10 @@ import ExpenseDetails from "./ExpenseDetails";
 import "./ExpenseItems.css";
 
 function ExpenseItems(props) {
-    const [amount, setAmount] = useState(props.amount);
-
+    const [title, setTitle] = useState(props.title);
     const clickHandler = () => {
-        setAmount(100);
-        console.log(amount);
+        setTitle("New Title")
+        console.log("clicked !!");
     }
 
     const deleteExpense = (event) => {
@@ -20,8 +19,8 @@ function ExpenseItems(props) {
     return (
         <Card className="expense-item">
             <ExpenseDate date={props.date} />
-            <ExpenseDetails title={props.title} amount={amount} location={props.location} />
-            <button onClick={clickHandler}>Change Price</button>
+            <ExpenseDetails title={title} amount={props.amount} location={props.location} />
+            <button onClick={clickHandler}>Change Title</button>
             <button onClick={deleteExpense}>Delete Expense</button>
         </Card >
     );
