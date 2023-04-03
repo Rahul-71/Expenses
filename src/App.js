@@ -1,5 +1,5 @@
 import Expenses from "./components/Expenses";
-import "./styles.css";
+import "./index.css";
 
 export default function App() {
 	const expenses = [
