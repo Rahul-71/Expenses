@@ -3,41 +3,52 @@ import "./ExpenseForm.css";
 
 export default function ExpenseForm() {
 
-    // const [enteredTitle, setEnteredTitle] = useState("");
-    // const [enteredAmount, setEnteredAmount] = useState("");
-    // const [enteredDate, setEnteredDate] = useState("");
-    const [userInput, setUserInput] = useState({
-        enteredTitle: '',
-        enteredAmount: '',
-        enteredDate: ''
-    })
+    const [enteredTitle, setEnteredTitle] = useState("");
+    const [enteredAmount, setEnteredAmount] = useState("");
+    const [enteredDate, setEnteredDate] = useState("");
+    // const [userInput, setUserInput] = useState({
+    //     enteredTitle: '',
+    //     enteredAmount: '',
+    //     enteredDate: ''
+    // })
 
 
     const titleInputHandler = (event) => {
-        setUserInput((prevState) => {
-            return { ...prevState, enteredTitle: event.target.value }
-        });
-        // setEnteredTitle(event.target.value);
-        console.log(`Title input: ${event.target.value}`);
+        // setUserInput((prevState) => {
+        //     return { ...prevState, enteredTitle: event.target.value }
+        // });
+        setEnteredTitle(event.target.value);
+        // console.log(`Title input: ${event.target.value}`);
     }
     const amountInputHandler = (event) => {
-        setUserInput((prevState) => {
-            return { ...prevState, enteredAmount: event.target.value }
-        });
-        // setEnteredAmount(event.target.value);
-        console.log(`Amount input: ${event.target.value}`);
+        // setUserInput((prevState) => {
+        //     return { ...prevState, enteredAmount: event.target.value }
+        // });
+        setEnteredAmount(event.target.value);
+        // console.log(`Amount input: ${event.target.value}`);
     }
     const dateInputHandler = (event) => {
-        setUserInput((prevState) => {
-            return { ...prevState, enteredDate: event.target.value }
-        });
-        // setEnteredDate(event.target.value);
-        console.log(`Date input: ${event.target.value}`);
+        // setUserInput((prevState) => {
+        //     return { ...prevState, enteredDate: event.target.value }
+        // });
+        setEnteredDate(event.target.value);
+        // console.log(`Date input: ${event.target.value}`);
+    }
+
+    const submitHandler = (event) => {
+        event.preventDefault();
+        const expenseData = {
+            title: enteredTitle,
+            amount: enteredAmount,
+            date: new Date(enteredDate)
+        };
+        // const expenseData = { ...userInput, enteredDate: new Date(userInput['enteredDate']) };
+        console.log(expenseData);
     }
 
 
     return (
-        <form>
+        <form onSubmit={submitHandler} >
             <div className="new-expense__controls" >
                 <div className="new-expense__controls" >
                     <label>Title</label>
