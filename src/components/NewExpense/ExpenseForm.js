@@ -3,20 +3,35 @@ import "./ExpenseForm.css";
 
 export default function ExpenseForm() {
 
-    const [enteredTitle, setEnteredTitle] = useState("");
-    const [enteredAmount, setEnteredAmount] = useState("");
-    const [enteredDate, setEnteredDate] = useState("");
+    // const [enteredTitle, setEnteredTitle] = useState("");
+    // const [enteredAmount, setEnteredAmount] = useState("");
+    // const [enteredDate, setEnteredDate] = useState("");
+    const [userInput, setUserInput] = useState({
+        enteredTitle: '',
+        enteredAmount: '',
+        enteredDate: ''
+    })
+
 
     const titleInputHandler = (event) => {
-        setEnteredTitle(event.target.value);
+        setUserInput((prevState) => {
+            return { ...prevState, enteredTitle: event.target.value }
+        });
+        // setEnteredTitle(event.target.value);
         console.log(`Title input: ${event.target.value}`);
     }
     const amountInputHandler = (event) => {
-        setEnteredAmount(event.target.value);
+        setUserInput((prevState) => {
+            return { ...prevState, enteredAmount: event.target.value }
+        });
+        // setEnteredAmount(event.target.value);
         console.log(`Amount input: ${event.target.value}`);
     }
     const dateInputHandler = (event) => {
-        setEnteredDate(event.target.value);
+        setUserInput((prevState) => {
+            return { ...prevState, enteredDate: event.target.value }
+        });
+        // setEnteredDate(event.target.value);
         console.log(`Date input: ${event.target.value}`);
     }
 
