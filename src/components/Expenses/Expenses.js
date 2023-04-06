@@ -18,18 +18,25 @@ export default function Expenses(props) {
 		exp => exp.date.getFullYear() == filteredYear
 	)
 
+	let expenseContent = <p> No Content Found !!</p>
+
+	if (filteredExpenses.length > 0) {
+		console.log("triggered: len=" + filteredExpenses.length);
+		expenseContent = filteredExpenses.map(expense => (
+			<ExpenseItems
+				key={expense.id}
+				title={expense.title}
+				amount={expense.amount}
+				date={expense.date} />
+		));
+	}
+
+
 	return (
 		<div>
 			<Card className="expenses">
 				<ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
-				{filteredExpenses.map(expense => (
-					<ExpenseItems
-						key={expense.id}
-						title={expense.title}
-						amount={expense.amount}
-						date={expense.date}
-					/>
-				))}
+				{expenseContent}
 			</Card>
 		</div>
 
