@@ -10,11 +10,13 @@ function ExpenseItems(props) {
     }
 
     return (
-        <Card className="expense-item">
-            <ExpenseDate date={props.date} />
-            <ExpenseDetails title={props.title} amount={props.amount} />
-            <button onClick={deleteExpense}>Delete Expense</button>
-        </Card >
+        <li>
+            <Card className="expense-item">
+                <ExpenseDate date={props.date} />
+                <ExpenseDetails title={props.title} amount={props.amount} />
+                <button onClick={deleteExpense}>Delete Expense</button>
+            </Card >
+        </li>
     );
 }
 
