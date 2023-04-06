@@ -29,6 +29,16 @@ export default function Expenses(props) {
 				amount={expense.amount}
 				date={expense.date} />
 		));
+
+		// displaying message when single expense is present
+		if (filteredExpenses.length === 1) {
+			expenseContent = (
+				<div>
+					{expenseContent}
+					<p>Only single Expense here. Please add more...</p>
+				</div>
+			);
+		}
 	}
 
 
