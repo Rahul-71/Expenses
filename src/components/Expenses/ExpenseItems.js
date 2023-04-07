@@ -14,7 +14,7 @@ function ExpenseItems(props) {
             <Card className="expense-item">
                 <ExpenseDate date={props.date} />
                 <ExpenseDetails title={props.title} amount={props.amount} />
-                <button onClick={deleteExpense}>Delete Expense</button>
+                <button onClick={deleteExpense}>Delete</button>
             </Card >
         </li>
     );
