@@ -5,7 +5,7 @@ export default function ExpenseList(props) {
     let expenseContent = <h3 className="expenses-list__fallback">Found No Expenses !!</h3>
 
     if (props.expenses.length > 0) {
-        console.log("triggered: len=" + props.expenses.length);
+
         expenseContent = props.expenses.map(expense => {
             return (
                 <ExpenseItems
